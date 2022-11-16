@@ -12,6 +12,26 @@ html {
   font-family: "Roboto", sans-serif;
 }
 
+.container {
+  max-width: 614px;
+  width: 100%;
+  margin: 0 auto;
+  background-color: #fafafa;
+
+  display: flex;
+  flex-direction: column;
+}
+
+/* Corpo Style */
+
+.content-container {
+  width: 100%;
+  margin-top: 5.4rem;
+
+  display: flex;
+  flex-direction: column;
+}
+
 /* Stories Style */
 
 .stories-wraper {

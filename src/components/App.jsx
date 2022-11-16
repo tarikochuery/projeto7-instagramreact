@@ -1,14 +1,9 @@
-import { Post } from "./Post";
-import { Posts } from "./Posts";
-import { SideBar } from "./SideBar";
-import { Stories } from "./Stories";
+import { Corpo } from "./Corpo";
 
 function App() {
   return (
-    <div className="App">
-      <Stories />
-      <Posts />
-      <SideBar />
+    <div className="container">
+      <Corpo />
     </div>
   );
 }
