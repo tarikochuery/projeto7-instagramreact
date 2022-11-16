@@ -57,6 +57,104 @@ html {
   align-items: center;
 }
 
+/* Post Style */
+
+div.post {
+  width: 100%;
+  margin-bottom: 6rem;
+  border-top: 1px solid #dbdbdb;
+  border-bottom: 1px solid #dbdbdb;
+  background-color: #fff;
+
+  display: flex;
+  flex-direction: column;
+}
+
+header.post-header {
+  width: 100%;
+  padding: 1.5rem 1.7rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.author {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.img-container {
+  width: 3.2rem;
+  height: 3.2rem;
+}
+
+.img-container img {
+  width: 100%;
+}
+
+.author-username {
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+.post-image img {
+  width: 100%;
+}
+
+.post-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.3rem;
+
+  width: 100%;
+  padding: 1.4rem 1.7rem;
+}
+
+.options-container {
+  width: 100%;
+  font-size: 1.7rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.interation-options {
+  list-style-type: none;
+
+  display: flex;
+  gap: 1.8rem;
+}
+
+.post-informations {
+  width: 100%;
+
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.comments-user {
+  width: 2rem;
+  height: 2rem;
+}
+
+.comments-user img {
+  width: 100%;
+}
+
+.post-informations p {
+  font-size: 1.4rem;
+  font-weight: 300;
+}
+
+.post-informations p strong {
+  font-weight: 500;
+}
+
 /* SideBar Style */
 
 .side-bar {
