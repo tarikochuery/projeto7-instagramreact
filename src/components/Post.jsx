@@ -12,25 +12,18 @@ function Post({ author, postImage }) {
   const [isSaved, setIsSaved] = useState(false);
   const [isLiked, setIsLiked] = useState(false);
   const [numberOfLikes, setNumberOfLikes] = useState(101523);
-  const [animationHeartClass, setAnimationHeartClass] = useState('');
   const handleSaveClick = () => {
     setIsSaved(state => !state);
-  };
-
-  const toggleHeartAnimationClass = () => {
-    setAnimationHeartClass(state => state ? '' : 'heart-animation');
   };
 
   const like = () => {
     setIsLiked(true);
     setNumberOfLikes(state => state + 1);
-    toggleHeartAnimationClass();
   };
 
   const dislike = () => {
     setIsLiked(false);
     setNumberOfLikes(state => state - 1);
-    toggleHeartAnimationClass();
   };
 
   const handleClickImage = () => {
