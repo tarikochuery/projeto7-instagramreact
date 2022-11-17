@@ -61,7 +61,7 @@ function Post({ author, postImage }) {
       <footer class="post-footer">
         <div class="options-container">
           <ul class="interation-options">
-            <li class="interation like" onClick={handleClickLike}>
+            <li data-test='like-post' class="interation like" onClick={handleClickLike}>
               {isLiked ? <IoHeart color='red' /> : <IoHeartOutline />}
             </li>
             <li class="interation">
