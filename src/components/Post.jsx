@@ -40,7 +40,7 @@ function Post({ author, postImage }) {
 
   const { username, image } = author;
   return (
-    <div class="post">
+    <div class="post" data-test='post'>
       <header class="post-header">
         <div class="author">
           <div class="img-profile">
@@ -52,9 +52,9 @@ function Post({ author, postImage }) {
           <img src="assets/options-icon.svg" alt='options' />
         </div>
       </header>
-      <article class="post-image" onDoubleClick={handleClickImage}>
-        <img src={postImage} alt={`${username}'s post`} />
-        <div className={`heart-animation ${isLiked ? 'liked' : false}`}>
+      <article class="post-image">
+        <img src={postImage} alt={`${username}'s post`} onDoubleClick={handleClickImage} data-test='post-image' />
+        <div data-test='like-post' className={`heart-animation ${isLiked ? 'liked' : false}`}>
           <IoHeart color='white' size='100%' />
         </div>
       </article>
@@ -71,7 +71,7 @@ function Post({ author, postImage }) {
               <IoPaperPlaneOutline />
             </li>
           </ul>
-          <div class="save-option" onClick={handleSaveClick}>
+          <div class="save-option" data-test='save-post' onClick={handleSaveClick}>
             {isSaved ? <IoBookmark /> : <IoBookmarkOutline />}
           </div>
         </div>
@@ -80,7 +80,7 @@ function Post({ author, postImage }) {
             <img src="assets/stories-images/respondeai.png" alt='respondeai' />
           </div>
           <p>
-            Curtido por <strong>respondeai</strong> e <strong>outras {numberOfLikes.toLocaleString('pt')} pessoas</strong>
+            Curtido por <strong>respondeai</strong> e <strong data-test='likes-number'>outras {numberOfLikes.toLocaleString('pt')} pessoas</strong>
           </p>
         </div>
       </footer>
