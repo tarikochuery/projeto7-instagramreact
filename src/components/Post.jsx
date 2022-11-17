@@ -1,6 +1,18 @@
-import { IoChatbubbleOutline, IoPaperPlaneOutline, IoHeartOutline, IoBookmarkOutline } from 'react-icons/io5';
+import { useState } from 'react';
+import { 
+  IoChatbubbleOutline, 
+  IoPaperPlaneOutline, 
+  IoHeartOutline, 
+  IoBookmarkOutline,
+  IoBookmark
+} from 'react-icons/io5';
 
 function Post({ author, postImage }) {
+  const [isSaved, setIsSaved] = useState(false)
+  const handleSaveClick = () => {
+    setIsSaved(!isSaved)
+  }
+
   const { username, image } = author;
   return (
     <div class="post">
@@ -31,8 +43,8 @@ function Post({ author, postImage }) {
               <IoPaperPlaneOutline />
             </li>
           </ul>
-          <div class="save-options">
-            <IoBookmarkOutline />
+          <div class="save-option" onClick={handleSaveClick}>
+            {isSaved ? <IoBookmark /> : <IoBookmarkOutline />}
           </div>
         </div>
         <div class="post-informations">
@@ -50,5 +62,4 @@ function Post({ author, postImage }) {
 
 export { Post };
 
-//TODO: Dar função de salvar post (Alterar ícone bookmark)
 //TODO: Dar função de like

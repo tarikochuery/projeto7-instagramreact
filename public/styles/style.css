@@ -193,6 +193,10 @@ header.post-header {
   gap: 1.8rem;
 }
 
+.save-option {
+  cursor: pointer;
+}
+
 .post-informations {
   width: 100%;
 

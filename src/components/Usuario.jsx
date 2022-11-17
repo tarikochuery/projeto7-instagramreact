@@ -35,6 +35,3 @@ function Usuario() {
 }
 
 export { Usuario };
-
-//TODO: Dar função de edição ao nome do usuário
-//TODO: Dar função de edição à imagem do usuário
