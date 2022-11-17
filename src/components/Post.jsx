@@ -13,17 +13,29 @@ function Post({ author, postImage }) {
   const [isLiked, setIsLiked] = useState(false)
   const [numberOfLikes, setNumberOfLikes] = useState(101523)
   const handleSaveClick = () => {
-    setIsSaved(!isSaved)
+    setIsSaved(state => !state)
   }
-
-  const handleClickImage = () => {
+  
+  const like = () => {
     setIsLiked(true)
-    setNumberOfLikes(101524)
+    setNumberOfLikes(state => state + 1)
+  }
+  
+  const dislike = () => {
+    setIsLiked(false)
+    setNumberOfLikes(state => state - 1)
+  }
+  
+  const handleClickImage = () => {
+    if (!isLiked) like()
   }
 
   const handleClickLike = () => {
-    setIsLiked(!isLiked)
-    setNumberOfLikes(isLiked ? 101524 : 101523)
+    if (!isLiked) {
+      like()
+    } else {
+      dislike()
+    }
   }
 
   const { username, image } = author;
@@ -74,5 +86,3 @@ function Post({ author, postImage }) {
 }
 
 export { Post };
-
-//FIXME: Acréscimo de Decréscimo de likes
