@@ -164,6 +164,34 @@ header.post-header {
   font-weight: 500;
 }
 
+.post-image {
+  position: relative;
+}
+
+.heart-animation {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  margin: auto;
+  max-width: 15rem;
+  scale: 0.2;
+  /* background-color: red; */
+}
+
+.heart-animation.liked{
+  animation: heart-animation 800ms;
+}
+
+@keyframes heart-animation {
+  0% {opacity: 1; scale: 0.2;}
+  40% {scale: 1; opacity: 1;}
+  100% {opacity: 0; scale: 1}
+}
+
 .post-image img {
   width: 100%;
 }

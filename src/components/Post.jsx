@@ -1,42 +1,49 @@
 import { useState } from 'react';
-import { 
-  IoChatbubbleOutline, 
-  IoPaperPlaneOutline, 
+import {
+  IoChatbubbleOutline,
+  IoPaperPlaneOutline,
   IoHeartOutline,
-  IoHeart, 
+  IoHeart,
   IoBookmarkOutline,
   IoBookmark
 } from 'react-icons/io5';
 
 function Post({ author, postImage }) {
-  const [isSaved, setIsSaved] = useState(false)
-  const [isLiked, setIsLiked] = useState(false)
-  const [numberOfLikes, setNumberOfLikes] = useState(101523)
+  const [isSaved, setIsSaved] = useState(false);
+  const [isLiked, setIsLiked] = useState(false);
+  const [numberOfLikes, setNumberOfLikes] = useState(101523);
+  const [animationHeartClass, setAnimationHeartClass] = useState('');
   const handleSaveClick = () => {
-    setIsSaved(state => !state)
-  }
-  
+    setIsSaved(state => !state);
+  };
+
+  const toggleHeartAnimationClass = () => {
+    setAnimationHeartClass(state => state ? '' : 'heart-animation');
+  };
+
   const like = () => {
-    setIsLiked(true)
-    setNumberOfLikes(state => state + 1)
-  }
-  
+    setIsLiked(true);
+    setNumberOfLikes(state => state + 1);
+    toggleHeartAnimationClass();
+  };
+
   const dislike = () => {
-    setIsLiked(false)
-    setNumberOfLikes(state => state - 1)
-  }
-  
+    setIsLiked(false);
+    setNumberOfLikes(state => state - 1);
+    toggleHeartAnimationClass();
+  };
+
   const handleClickImage = () => {
-    if (!isLiked) like()
-  }
+    if (!isLiked) like();
+  };
 
   const handleClickLike = () => {
     if (!isLiked) {
-      like()
+      like();
     } else {
-      dislike()
+      dislike();
     }
-  }
+  };
 
   const { username, image } = author;
   return (
@@ -44,16 +51,19 @@ function Post({ author, postImage }) {
       <header class="post-header">
         <div class="author">
           <div class="img-profile">
-            <img src={image} alt={username}/>
+            <img src={image} alt={username} />
           </div>
           <strong class="author-username">{username}</strong>
         </div>
         <div class="options">
-          <img src="assets/options-icon.svg" alt='options'/>
+          <img src="assets/options-icon.svg" alt='options' />
         </div>
       </header>
       <article class="post-image" onDoubleClick={handleClickImage}>
-        <img src={postImage} alt={`${username}'s post`}/>
+        <img src={postImage} alt={`${username}'s post`} />
+        <div className={`heart-animation ${isLiked ? 'liked' : false}`}>
+          <IoHeart color='white' size='100%' />
+        </div>
       </article>
       <footer class="post-footer">
         <div class="options-container">
@@ -74,7 +84,7 @@ function Post({ author, postImage }) {
         </div>
         <div class="post-informations">
           <div class="comments-user">
-            <img src="assets/stories-images/respondeai.png" alt='respondeai'/>
+            <img src="assets/stories-images/respondeai.png" alt='respondeai' />
           </div>
           <p>
             Curtido por <strong>respondeai</strong> e <strong>outras {numberOfLikes.toLocaleString('pt')} pessoas</strong>
