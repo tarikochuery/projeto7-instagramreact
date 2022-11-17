@@ -275,6 +275,16 @@ header.post-header {
 .profile-img {
   width: 5.6rem;
   height: 5.6rem;
+  cursor: pointer;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-img img {
+  width: 100%;
 }
 
 .profile-info {

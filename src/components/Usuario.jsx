@@ -4,16 +4,22 @@ import {IoPencilOutline} from 'react-icons/io5'
 
 function Usuario() {
   const [username, setUsername] = useState('Catana')
+  const [usernameImage, setUsernameImage] = useState('assets/catanacomics.png')
   
   const handleClickUsername = () => {
     const newUsername = prompt('Qual seu novo nome de usuário?')
     setUsername(newUsername)
   }
 
+  const handleClickUsernameImage = () => {
+    const newUsernameImage = prompt('Insira o link da nova imagem')
+    setUsernameImage(newUsernameImage)
+  }
+
   return (
     <header className="profile">
-      <div className="profile-img">
-        <img src="assets/catanacomics.png" alt={username} />
+      <div className="profile-img" onClick={handleClickUsernameImage}>
+        <img src={usernameImage} alt={username} />
       </div>
       <div class="profile-info">
         <strong>catanacomics</strong>
