@@ -52,7 +52,7 @@ function Post({ author, postImage }) {
           <img src="assets/options-icon.svg" alt='options'/>
         </div>
       </header>
-      <article class="post-image" onClick={handleClickImage}>
+      <article class="post-image" onDoubleClick={handleClickImage}>
         <img src={postImage} alt={`${username}'s post`}/>
       </article>
       <footer class="post-footer">
