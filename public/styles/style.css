@@ -289,6 +289,16 @@ header.post-header {
   font-weight: 500;
 }
 
+.user-container {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.edit-icon {
+  cursor: pointer;
+}
+
 .profile-info p {
   font-weight: 300;
 }
