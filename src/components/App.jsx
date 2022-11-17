@@ -1,4 +1,5 @@
 import { Corpo } from "./Corpo";
+import { MenuFooter } from "./MenuFooter";
 import { NavBar } from "./NavBar";
 
 function App() {
@@ -6,6 +7,7 @@ function App() {
     <div className="container">
       <NavBar />
       <Corpo />
+      <MenuFooter />
     </div>
   );
 }
