@@ -193,6 +193,10 @@ header.post-header {
   gap: 1.8rem;
 }
 
+.like {
+  cursor: pointer
+}
+
 .save-option {
   cursor: pointer;
 }
