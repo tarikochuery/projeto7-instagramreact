@@ -54,7 +54,7 @@ function Post({ author, postImage }) {
       </header>
       <article class="post-image">
         <img src={postImage} alt={`${username}'s post`} onDoubleClick={handleClickImage} data-test='post-image' />
-        <div data-test='like-post' className={`heart-animation ${isLiked ? 'liked' : false}`}>
+        <div className={`heart-animation ${isLiked ? 'liked' : false}`}>
           <IoHeart color='white' size='100%' />
         </div>
       </article>
