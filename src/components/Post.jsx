@@ -1,4 +1,4 @@
-import { HeartOutline, ChatbubbleOutline, PaperPlaneOutline, BookmarkOutline } from 'react-ionicons';
+import { IoChatbubbleOutline, IoPaperPlaneOutline, IoHeartOutline, IoBookmarkOutline } from 'react-icons/io5';
 
 function Post({ author, postImage }) {
   const { username, image } = author;
@@ -7,37 +7,37 @@ function Post({ author, postImage }) {
       <header class="post-header">
         <div class="author">
           <div class="img-profile">
-            <img src={image} />
+            <img src={image} alt={username}/>
           </div>
           <strong class="author-username">{username}</strong>
         </div>
         <div class="options">
-          <img src="assets/options-icon.svg" />
+          <img src="assets/options-icon.svg" alt='options'/>
         </div>
       </header>
       <article class="post-image">
-        <img src={postImage} alt="" />
+        <img src={postImage} alt={`${username}'s post`}/>
       </article>
       <footer class="post-footer">
         <div class="options-container">
           <ul class="interation-options">
             <li class="interation">
-              <HeartOutline />
+              <IoHeartOutline />
             </li>
             <li class="interation">
-              <ChatbubbleOutline />
+              <IoChatbubbleOutline />
             </li>
             <li class="interation">
-              <PaperPlaneOutline />
+              <IoPaperPlaneOutline />
             </li>
           </ul>
           <div class="save-options">
-            <BookmarkOutline />
+            <IoBookmarkOutline />
           </div>
         </div>
         <div class="post-informations">
           <div class="comments-user">
-            <img src="assets/stories-images/respondeai.png" />
+            <img src="assets/stories-images/respondeai.png" alt='respondeai'/>
           </div>
           <p>
             Curtido por <strong>respondeai</strong> e <strong>outras 101.523 pessoas</strong>
@@ -49,3 +49,6 @@ function Post({ author, postImage }) {
 }
 
 export { Post };
+
+//TODO: Dar função de salvar post (Alterar ícone bookmark)
+//TODO: Dar função de like

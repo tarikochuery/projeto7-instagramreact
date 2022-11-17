@@ -3,7 +3,7 @@ export function Sugestao({ username, image }) {
     <div class="follow-suggestion">
       <div class="follower-profile">
         <div class="follower-img">
-          <img src={image} alt="" />
+          <img src={image} alt={username}/>
         </div>
         <div class="follower-info">
           <strong class="follower-username">{username}</strong>

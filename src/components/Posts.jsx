@@ -33,7 +33,7 @@ function Posts() {
   ];
   return (
     <div className="feed">
-      {posts.map(post => <Post author={post.author} postImage={post.postImage}/>)}
+      {posts.map((post, idx) => <Post key={idx} author={post.author} postImage={post.postImage} />)}
     </div>
   );
 }

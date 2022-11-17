@@ -18,7 +18,7 @@ export function Stories() {
         <div class="swipe">
           <img src="assets/arrow-icon.svg" alt="" />
         </div>
-        {stories.map(story => <Story username={story.username} image={story.image} />)}
+        {stories.map((story, idx) => <Story key={idx} username={story.username} image={story.image} />)}
       </div>
     </div>
   );

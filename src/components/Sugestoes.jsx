@@ -1,5 +1,4 @@
 import { Sugestao } from "./Sugestao";
-import { Usuario } from "./Usuario";
 
 export function Sugestoes(){
   const sugestoes = [
@@ -17,7 +16,7 @@ export function Sugestoes(){
           <p>Ver tudo</p>
         </div>
         <div className="suggestions-content">
-          {sugestoes.map(sugestao => <Sugestao username={sugestao.username} image={sugestao.image} />)}
+          {sugestoes.map((sugestao, idx) => <Sugestao key={idx} username={sugestao.username} image={sugestao.image} />)}
         </div>
       </main>
   )
